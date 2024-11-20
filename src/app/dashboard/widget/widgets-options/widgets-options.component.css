@@ -1,0 +1,22 @@
+
+.move-forward-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -5px;
+  
+}
+
+.move-backward-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5px;
+
+}
+.remove-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: red;
+}

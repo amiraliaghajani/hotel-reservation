@@ -1,0 +1,110 @@
+
+.container {
+  padding: 20px;
+  /* max-width: 1200px; */
+  margin: auto;
+
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar mat-form-field {
+  width: 200px;
+}
+
+/* Grid list styling */
+.products-grid {
+  width: 100%;
+}
+
+.example-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Swiper styling */
+
+
+/* Card header and content styling */
+mat-card{
+  background-color:var(--mdc-elevated-card-container-color, var(--mat-app-surface-container-low));
+
+}
+
+
+mat-card-header {
+  padding: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: right;
+}
+
+mat-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+
+mat-card-subtitle {
+  font-size: 1em;
+ 
+  font-family: 'Vazirmatn', sans-serif;
+
+  color: var(--sys-on-surface);
+  text-align: right;
+
+}
+
+mat-card-content p {
+  color: #666;
+  font-size: 0.9em;
+  padding: 10px;
+  line-height: 1.4;
+  text-align: right;
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+.perNight{
+  font-weight: 300;
+  color: #ccbfbf;
+
+}
+.on-click{
+  cursor: pointer;
+}
+.right-section{
+  display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2px;
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+.right-section mat-icon{
+  font-size: 18px;
+  color: gold;
+}

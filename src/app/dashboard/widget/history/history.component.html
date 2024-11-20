@@ -1,0 +1,30 @@
+<div *ngIf="UserReservation.length > 0; else noReservations" class="reservation-container">
+    <div *ngFor="let item of UserReservation" class="reservation-card">
+      <h3 class="reservation-title">{{ item.hotelName }} <strong>: نام هتل</strong></h3>
+      <p><strong>آیدی رزرو :  </strong> {{ item.reservation.reservationId }}</p>
+      <p> {{ item.userFirstName }} {{ item.userLastName }} <strong>: نام کاربر</strong></p>
+      <p> 
+        <span [class]="item.reservation.status">{{ item.reservation.status | titlecase }}</span>
+        <strong>: وضعیت</strong>
+      </p>
+      <p>
+        {{ item.reservation.dateRange[0] | date }} - 
+        {{ item.reservation.dateRange[1] | date }}
+        <strong>: تاریخ</strong> 
+      </p>
+      <p>
+        <span *ngFor="let member of item.reservation.familyMembers; let i = index">
+          {{ member.firstName }} {{ member.lastName }}
+          <strong>: اعضای خانواده</strong> 
+          <span *ngIf="i < item.reservation.familyMembers.length - 1">, </span>
+        </span>
+      </p>
+    </div>
+  </div>
+  
+  <ng-template #noReservations>
+    <div class="no-reservations">
+      <p>No reservations found for the current user.</p>
+    </div>
+  </ng-template>
+  

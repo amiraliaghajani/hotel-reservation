@@ -1,0 +1,111 @@
+mat-label{
+  font-family: 'Vazirmatn', sans-serif !important;
+}
+.font{
+  font-family: 'Vazirmatn', sans-serif !important;
+
+}
+
+
+section {
+    padding: 40px 20px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    
+  }
+  
+  form {
+    background-color:var(--mdc-elevated-card-container-color, var(--mat-app-surface-container-low));
+    padding: 40px; 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    max-width: 600px; 
+    margin: 0 auto; 
+  }
+  
+  .persian-name,
+  .englishName,
+  .password-container,
+  .phone-email-container,
+  .unit-grade-container {
+    width: 100%;
+  }
+  
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  .mat-label {
+    color: #6200ea; 
+  }
+  
+  .password-container mat-form-field {
+    margin-top: 20px; 
+  }
+  
+  .control-row {
+    margin-top: 20px; 
+  }
+  
+  .control-error {
+    font-size: 14px; 
+    margin-top: 10px;
+  }
+  
+  
+  .button-submit {
+    margin-top: 20px; 
+  }
+  
+  button {
+    transition: background-color 0.3s, transform 0.2s; 
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  button[type="button"] {
+    background-color: #f44336; 
+    color: white; 
+  }
+
+  
+  button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5); 
+  }
+  
+  
+  @media (max-width: 600px) {
+    section {
+      padding: 20px; 
+    }
+  
+    form {
+      padding: 20px; 
+    }
+  }
+  
+
+  .invalid-button {
+    color: white;
+    border: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .valid-button {
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+  } */

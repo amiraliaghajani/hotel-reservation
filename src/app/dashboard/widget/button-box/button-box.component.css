@@ -1,0 +1,46 @@
+/* Container styling */
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+  
+  /* Button styling */
+  button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Edit button specific style */
+  .edit-btn {
+    color: #2196f3; /* Blue text */
+    border: 2px solid #2196f3; /* Blue border */
+    background: transparent; /* Transparent background */
+  }
+  
+  .edit-btn:hover {
+    color: #ffffff; /* White text on hover */
+    background: #2196f3; /* Blue background on hover */
+    box-shadow: 0 8px 15px rgba(33, 150, 243, 0.3); /* Subtle hover shadow */
+    transform: translateY(-3px); /* Slight lift on hover */
+  }
+  
+  /* Exit button specific style */
+  .exit-btn {
+    color: #ffffff; /* White text */
+    background: #f44336; /* Red background */
+    box-shadow: 0 4px 8px rgba(244, 67, 54, 0.2); /* Subtle initial shadow */
+  }
+  
+  .exit-btn:hover {
+    background: #d32f2f; /* Darker red on hover */
+    box-shadow: 0 8px 15px rgba(211, 47, 47, 0.3); /* Enhanced hover shadow */
+    transform: translateY(-3px); /* Slight lift on hover */
+  }
+  

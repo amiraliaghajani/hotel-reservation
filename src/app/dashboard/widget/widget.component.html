@@ -1,0 +1,19 @@
+
+
+<div 
+class="container mat-elevation-z3" 
+ [style.background-color]="data().background ?? 'var(--mdc-elevated-card-container-color, var(--mat-app-surface-container-low))'"
+ [style.color]="data().color ?? 'inherit'"
+ >
+<h3 class="m-0 ">{{data().label}}</h3>
+<button mat-icon-button class="settings-buttons" (click)="showOptions.set(true)">
+    <mat-icon>settings</mat-icon>
+</button>
+
+
+    <ng-container [ngComponentOutlet]="data().content" />
+
+@if(showOptions()){
+<app-widgets-options [(showOptions)]="showOptions"  [data]="data()"/>
+}
+</div>

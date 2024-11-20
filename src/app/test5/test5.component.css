@@ -1,0 +1,161 @@
+.calendar-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  
+
+}
+
+.reserved-date .mat-calendar-body-cell-content {
+  background-color: #D4D0F1; 
+  font-family: 'Vazirmatn', sans-serif;
+  color: black;
+  border-radius: 5%;
+font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: start;
+  padding: 5px;
+  z-index: -2;
+}
+
+
+
+.calendar-container {
+  position: relative;
+}
+.profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%; 
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.mat-calendar-body-cell {
+  position: relative; 
+
+}
+
+.mat-calendar-body-cell .remaining-count {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 12px;
+  font-family: 'Vazirmatn', sans-serif;
+ 
+  color: #999;
+}
+
+
+
+.date-cell {
+  text-align: center;
+  position: relative;
+}
+
+
+.remaining-count {
+  font-size: 12px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  padding: 2px 5px; 
+  position: absolute; 
+  bottom: 0%;
+  right: 30% !important;
+  font-weight: bold;
+  z-index: 1; 
+
+}
+
+.reservation-details {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.reservation-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.reservation-header h4 {
+  font-size: 1.2rem;
+  color: #5a5a5a;
+  margin: 0;
+}
+
+.reservation-header h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.reservation-count {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.reservation-date {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.reservation-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.reservation-item {
+  background: #ffffff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.reservation-date-range {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+

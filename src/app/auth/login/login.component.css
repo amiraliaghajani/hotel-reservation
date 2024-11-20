@@ -1,0 +1,127 @@
+.font{
+  font-family: 'Vazirmatn', sans-serif !important;
+
+}
+
+.container {
+    min-height: 100vh; 
+    background: linear-gradient(135deg, var(--sys-background), var(--sys-surface-container-low),); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  form {
+    background: var(--sys-surface-container-highest);
+    padding: 40px 30px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  p {
+    margin: 0; 
+  }
+  
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  
+  button[type="submit"] {
+    background-color: var( --sys-primary); 
+    color: white; 
+    padding: 12px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    width: 100%; 
+    transition: background-color 0.3s; 
+  }
+  
+ 
+  button[type="submit"]:hover {
+    background-color: #00b351; 
+  }
+  
+ 
+  .mat-icon {
+    color: #6200ea;
+  }
+  
+ 
+  .mat-error {
+    color: #f44336;
+    font-size: 14px;
+  }
+  
+ 
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    form {
+      padding: 30px;
+    }
+  }
+  /* ================================= */
+  
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: var(--sys-inverse-surface) var(--sys-inverse-surface) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #FF3D00 #FF3D00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: var(--sys-inverse-surface) var(--sys-inverse-surface) transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+      
+  

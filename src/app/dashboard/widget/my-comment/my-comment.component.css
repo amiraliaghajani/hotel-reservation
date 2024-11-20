@@ -1,0 +1,81 @@
+/* Style the wrapper for cards */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* Base styling for mat-card */
+  .review-card {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for mat-card */
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Style mat-card-header */
+  mat-card-header {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+  
+  mat-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  mat-card-subtitle {
+    font-size: 0.875rem;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  /* Style mat-icon inside the subtitle */
+  mat-card-subtitle mat-icon {
+    color: #ffcc00;
+    font-size: 1rem;
+  }
+  
+  /* Style mat-card-content */
+  mat-card-content {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: right;
+  }
+  
+  /* Style mat-card-footer */
+  mat-card-footer {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-align: right;
+    color: #888;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .review-card {
+      max-width: 90%;
+    }
+  }
+  

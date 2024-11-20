@@ -1,0 +1,272 @@
+[
+          {
+            "commentId": 1,
+            "userId": 1,
+            "hotelId": 1,
+            "date": "2024-01-12T10:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Great place to stay, highly recommend!"
+          },
+          {
+            "commentId": 2,
+            "userId": 2,
+            "hotelId": 1,
+            "date": "2024-01-15T15:45:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Amazing experience, will come back!"
+          },
+          {
+            "commentId": 3,
+            "userId": 3,
+            "hotelId": 1,
+            "date": "2024-01-18T09:00:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "It was okay, but could be better."
+          },
+          {
+            "commentId": 4,
+            "userId": 4,
+            "hotelId": 2,
+            "date": "2024-01-20T12:00:00Z",
+            "status": "rejected",
+            "stars": 2,
+            "description": "Not worth the price."
+          },
+          {
+            "commentId": 5,
+            "userId": 1,
+            "hotelId": 2,
+            "date": "2024-01-22T14:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Decent place, friendly staff."
+          },
+          {
+            "commentId": 6,
+            "userId": 2,
+            "hotelId": 2,
+            "date": "2024-02-01T11:15:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Fantastic value for the money!"
+          },
+          {
+            "commentId": 7,
+            "userId": 3,
+            "hotelId": 3,
+            "date": "2024-02-05T10:00:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "Good but needs some improvements."
+          },
+          {
+            "commentId": 8,
+            "userId": 4,
+            "hotelId": 3,
+            "date": "2024-02-10T09:00:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Absolutely loved this place!"
+          },
+          {
+            "commentId": 9,
+            "userId": 1,
+            "hotelId": 3,
+            "date": "2024-02-12T12:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Comfortable and relaxing."
+          },
+          {
+            "commentId": 10,
+            "userId": 2,
+            "hotelId": 1,
+            "date": "2024-02-15T13:00:00Z",
+            "status": "pending",
+            "stars": 2,
+            "description": "Service could be better."
+          },
+          {
+            "commentId": 11,
+            "userId": 3,
+            "hotelId": 2,
+            "date": "2024-02-17T11:45:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Perfect for a weekend getaway!"
+          },
+          {
+            "commentId": 12,
+            "userId": 4,
+            "hotelId": 1,
+            "date": "2024-02-20T08:30:00Z",
+            "status": "rejected",
+            "stars": 1,
+            "description": "Worst experience I've ever had."
+          },
+          {
+            "commentId": 13,
+            "userId": 1,
+            "hotelId": 3,
+            "date": "2024-02-22T10:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Great location and views!"
+          },
+          {
+            "commentId": 14,
+            "userId": 2,
+            "hotelId": 3,
+            "date": "2024-02-25T15:00:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Luxurious experience!"
+          },
+          {
+            "commentId": 15,
+            "userId": 3,
+            "hotelId": 1,
+            "date": "2024-02-28T09:00:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "Good but needs better amenities."
+          },
+          {
+            "commentId": 16,
+            "userId": 4,
+            "hotelId": 2,
+            "date": "2024-03-02T12:00:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Nice hotel with good facilities."
+          },
+          {
+            "commentId": 17,
+            "userId": 1,
+            "hotelId": 2,
+            "date": "2024-03-05T14:00:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Best hotel stay ever!"
+          },
+          {
+            "commentId": 18,
+            "userId": 2,
+            "hotelId": 3,
+            "date": "2024-03-08T10:30:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "Nice but not what I expected."
+          },
+          {
+            "commentId": 19,
+            "userId": 3,
+            "hotelId": 1,
+            "date": "2024-03-10T13:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Enjoyed my stay!"
+          },
+          {
+            "commentId": 20,
+            "userId": 4,
+            "hotelId": 2,
+            "date": "2024-03-12T11:15:00Z",
+            "status": "rejected",
+            "stars": 2,
+            "description": "Too noisy."
+          },
+          {
+            "commentId": 21,
+            "userId": 1,
+            "hotelId": 3,
+            "date": "2024-03-15T08:30:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Loved the ambiance!"
+          },
+          {
+            "commentId": 22,
+            "userId": 2,
+            "hotelId": 1,
+            "date": "2024-03-18T09:45:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Very cozy."
+          },
+          {
+            "commentId": 23,
+            "userId": 3,
+            "hotelId": 2,
+            "date": "2024-03-20T10:00:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "Decent but could improve."
+          },
+          {
+            "commentId": 24,
+            "userId": 4,
+            "hotelId": 3,
+            "date": "2024-03-22T14:00:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Outstanding service!"
+          },
+          {
+            "commentId": 25,
+            "userId": 1,
+            "hotelId": 1,
+            "date": "2024-03-25T15:30:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Will definitely return!"
+          },
+          {
+            "commentId": 26,
+            "userId": 2,
+            "hotelId": 2,
+            "date": "2024-03-28T11:15:00Z",
+            "status": "pending",
+            "stars": 2,
+            "description": "Not worth the price."
+          },
+          {
+            "commentId": 27,
+            "userId": 3,
+            "hotelId": 3,
+            "date": "2024-03-30T12:00:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "Fabulous place!"
+          },
+          {
+            "commentId": 28,
+            "userId": 4,
+            "hotelId": 1,
+            "date": "2024-04-02T10:00:00Z",
+            "status": "approved",
+            "stars": 4,
+            "description": "Great experience overall."
+          },
+          {
+            "commentId": 29,
+            "userId": 1,
+            "hotelId": 2,
+            "date": "2024-04-05T09:30:00Z",
+            "status": "pending",
+            "stars": 3,
+            "description": "Average stay, not memorable."
+          },
+          {
+            "commentId": 30,
+            "userId": 2,
+            "hotelId": 3,
+            "date": "2024-04-07T14:15:00Z",
+            "status": "approved",
+            "stars": 5,
+            "description": "One of the best stays I've had!"
+          }
+        ]

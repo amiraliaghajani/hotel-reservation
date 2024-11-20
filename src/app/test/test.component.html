@@ -1,0 +1,28 @@
+<div class="calendar-container">
+  <div *ngIf="reservations.length > 0">
+    <mat-calendar [dateClass]="dateClass" (selectedChange)="dateSelected($event)">
+      <ng-container *ngFor="let reservation of reservations">
+        <ng-container *ngIf="reservation.startDay && reservation.endDay">
+          <ng-container *ngFor="let date of getReservedDates(reservation)">
+            <ng-container *ngIf="date">
+              <div class="reservation-image" [ngStyle]="{position: 'relative'}">
+                <img *ngIf="date" [src]="reservation.profilePictureUrl" alt="Profile Picture" />
+              </div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </mat-calendar>
+  </div>
+  <div class="reservation-details" *ngIf="selectedReservations.length > 0">
+    <h4>Reservation available: {{selectedReservations.length}}</h4>
+    <h3>Reservations for {{ selectedDate | date }}</h3>
+    <ul>
+      <li *ngFor="let reservation of selectedReservations">
+        <strong>{{ reservation.fullName }}</strong> ({{ reservation.startDay | date }} - {{ reservation.endDay | date }})
+      </li>
+    </ul>
+  </div>
+</div>
+<h1>Monsterlessons academy</h1>
+

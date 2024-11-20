@@ -1,0 +1,15 @@
+<div class="calendar-container">
+  <mat-calendar [dateClass]="dateClass" (selectedChange)="dateSelected($event)"></mat-calendar>
+</div>
+
+    
+
+    <div class="reservation-details" *ngIf="selectedReservations.length > 0">
+      <h4>reservation available: {{selectedReservations.length }}</h4>
+      <h3>Reservations for {{ selectedDate | date }}</h3>
+      <ul>
+        <li *ngFor="let reservation of selectedReservations">
+          <strong>{{ reservation.fullName }}</strong> ({{ formatDate(reservation.startDay) }} - {{ formatDate(reservation.endDay) }})
+        </li>
+      </ul>
+    </div>

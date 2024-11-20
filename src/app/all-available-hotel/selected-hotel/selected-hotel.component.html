@@ -1,0 +1,195 @@
+<section fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  
+
+  <div *ngIf="isLoading$ | async; else showData">
+    <app-loading-selected-hotel></app-loading-selected-hotel>
+  </div>
+
+<ng-template #showData>
+  
+  <div class="whole">
+    @if(hotel){
+      
+        <mat-toolbar class="header-toolbar">
+          
+          <div class="left-section">
+            <button 
+            mat-icon-button 
+            aria-label="Share" 
+            class="icon-button"
+            matTooltip="اشتراک گذاری"
+        matTooltipClass="example-tooltip-uppercase"
+            >
+              <mat-icon>share</mat-icon>
+              
+            </button>
+            <button
+             mat-icon-button 
+             aria-label="Favorite"
+              class="icon-button"
+              matTooltip="اضافه کردن به مورد علاقه ها"
+              matTooltipClass="example-tooltip-uppercase">
+              <mat-icon>favorite</mat-icon>
+              
+            </button>
+            
+          </div>
+          
+        
+          <div class="right-section">
+            <mat-card-header >
+              <mat-card-title class="font">{{ hotel.name }}</mat-card-title>
+              <mat-card-subtitle class="font hotel-header">قیمت هر شب : {{ hotel.price|toomanCurrency }}</mat-card-subtitle>
+            </mat-card-header>
+            <div>
+              
+            <mat-icon>star</mat-icon>
+            <ng-container *ngIf="showComment$ | async as showComment">
+            <span class="average-rating">{{ getAverageStars(showComment) | number: '1.1-1' }}</span>
+            <span class="total-ratings">(  از{{ showComment.length }} نظر ثبت شده )</span>
+          </ng-container>
+            </div>
+          </div>
+        </mat-toolbar>
+        <div class="image-container">
+          
+            
+         
+          <div class="small-images">
+            <img [src]="'../../../assets/images/' + hotel.image_url[1]" alt="Small Image 1" (click)="openImageModal()"/>
+            <img [src]="'../../../assets/images/' + hotel.image_url[2]" alt="Small Image 2" (click)="openImageModal()"/>
+            <img [src]="'../../../assets/images/' + hotel.image_url[3]" alt="Small Image 3" (click)="openImageModal()"/>
+            <img [src]="'../../../assets/images/' + hotel.image_url[4]" alt="Small Image 4" (click)="openImageModal()"/>
+          </div>
+          <div class="large-image">
+            <img [src]="'../../../assets/images/' + hotel.image_url[0]"  alt="Large Image" (click)="openImageModal()"/>
+          </div>
+        </div>
+        <div class="container">
+          
+         
+            
+
+   
+    
+
+<!-- Modal for displaying the selected image -->
+<div class="modal-backdrop" *ngIf="isModalImageOpen" (click)="closeImageModal()"></div>
+<div class="modal" *ngIf="isModalImageOpen">
+  <div class="modal-image-container">
+    <image-slider class="modal-image-container"  [hotelData]="hotel"></image-slider>
+  </div>
+  <button
+   mat-icon-button
+    (click)="closeImageModal()" 
+    class="button-for-modal">
+  <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+          </div>
+      
+          
+          
+            <div class="paraph description-hotel">
+              <p>{{ hotel.description }}</p>
+            </div>
+          
+        
+      
+      <mat-card class="hotel-trait-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title class="hotel-name font">ویژگی های  {{hotel.name}}</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content class="hotel-traits">
+          <div class="trait">
+            <ng-container *ngIf="showComment$ | async as showComment">
+
+            <span>امتیاز  : {{ getAverageStars(showComment) | number: '1.1-1' }} </span>
+            </ng-container>
+            <mat-icon>star</mat-icon>
+          </div>
+          <div class="trait">
+            <span>مکان : تهران بوار مزینان</span>
+            <mat-icon>location_on</mat-icon>
+          </div>
+          <div class="trait">
+            <span>سرویس غذا: دارد</span>
+            <mat-icon>room_service</mat-icon>
+          </div>
+          <div class="trait">
+            <span>وای فای : دارد</span>
+            <mat-icon>wifi</mat-icon>
+          </div>
+          <div class="trait">
+            <span>سرویس های خواب : 3 عدد</span>
+            <mat-icon>pets</mat-icon>
+          </div>
+        </mat-card-content>
+      </mat-card>
+     
+
+
+
+      }
+  </div>
+  
+  <app-reservation-form></app-reservation-form>
+  <div class="for-comment">
+    <div class="button-container">
+      <button mat-raised-button class="primary-button font" #commentform >برای ما کامنت بگزارید</button>
+      <button mat-flat-button #calendar (click)="openModal()" class="font">تقویم رزوری ها برای ادمین</button>
+
+    </div>
+
+@defer(when isModalOpen){
+
+  <app-calendar-for-selected-hotel *ngIf="isModalOpen" (close)="closeModal()"></app-calendar-for-selected-hotel>
+}
+
+
+
+
+  <div *ngIf="loading" class="loading-container">
+    
+
+  </div>
+
+  @defer (on interaction(commentform)) {
+    <app-comment />
+  }
+
+  
+</div>
+
+@defer (on viewport) {
+  <div class="comment-container" *ngIf="showComment$ | async as showComment;">
+    <mat-card class="comment-card" *ngFor="let comment of showComment" >
+      <mat-card-header>
+        <mat-card-title>{{ comment.title }}</mat-card-title>
+        <mat-card-subtitle>{{ comment.date | date: 'short' }}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content class="comment-body">
+        <p>{{comment.description}}</p>
+        <div class="star-rating">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+            <mat-icon [class.filled]="star <= comment.stars">star</mat-icon>
+          </ng-container>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+} @placeholder {
+  <mat-spinner></mat-spinner>
+}
+</ng-template>
+
+
+
+
+
+
+</section>
+

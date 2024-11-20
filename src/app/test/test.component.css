@@ -1,0 +1,101 @@
+
+
+
+
+  
+
+ .example-custom-date-class .mat-calendar-body-cell-content {
+  background-color: #ff4081; /* Pink background for reserved days */
+    position: relative;
+}
+
+.example-custom-date-class img {
+  position: absolute;
+  bottom: 5px; /* Position images at the bottom */
+  right: 5px; /* Adjust positioning as needed */
+  width: 24px; /* Image size */
+  height: 24px; /* Image size */
+  border-radius: 50%; /* Make images round */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  .reservation-details {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  .reservation-details h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .reservation-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reservation-details li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffecf1; /* Light pink for individual reservations */
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .calendar-container {
+      max-width: 100%;
+      padding: 5px;
+    }
+  
+    .mat-calendar {
+      width: 100%;
+    }
+  }

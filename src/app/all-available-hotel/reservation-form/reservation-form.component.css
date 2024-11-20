@@ -1,0 +1,67 @@
+*{
+  font-family: 'Vazirmatn', sans-serif !important;
+
+}
+mat-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color:var(--mdc-elevated-card-container-color, var(--mat-app-surface-container-low));
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 10px 0;
+}
+
+mat-card-title {
+  font-size: 1.5em;
+  margin: 16px 0px 16px 0px;
+  text-align: end;
+
+}
+
+mat-input-element {
+  color: #333;
+}
+
+button[mat-raised-button] {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+ol {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+ol li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: end;
+}
+
+button[mat-raised-button].mat-warn {
+  margin-left: 10px;
+}
+
+.mat-hint, mat-error {
+  font-size: 0.875em;
+  color: #f44336;
+}
+
+.submit-button{
+  margin:  16px;
+}
+mat-form-field{
+  margin: 0;
+}
+.add-button{
+  height: 100%;
+  border-radius: 5px;
+  align-self: baseline;
+  margin-top: 5px;
+}

@@ -1,0 +1,78 @@
+*{
+  font-family: 'Vazirmatn', sans-serif !important;
+
+}
+
+
+/* Center the content and give it unique styling */
+.reservation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 80%;
+  }
+  
+  .reservation-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: var(--sys-on-secondary);
+
+    /* border: 2px solid #007bff; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .reservation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 25%;
+  }
+  
+  .reservation-list {
+    padding-left: 20px;
+  }
+  
+  .reservation-item {
+    background-color: var(--sys-on-secondary);
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-card-title {
+    font-weight: bold;
+    font-size: 1.4em;
+  
+  }
+  
+  .mat-card-subtitle {
+    font-size: 1.2em;
+  }
+  
+  .mat-accordion .mat-expansion-panel {
+    background-color:var(--mdc-filled-text-field-container-color, var(--mat-app-surface-variant));
+    
+  }
+  
+  .mat-expansion-panel-header {
+    /* background-color: #007bff; */
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .mat-expansion-panel-header:hover {
+    background-color: #0056b3;
+  }
+  mat-card-header{
+    padding: 10px;
+  }

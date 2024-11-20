@@ -1,0 +1,360 @@
+<section>
+<form action="" 
+fxLayout="column"  
+     fxLayoutAlign="center center"
+     fxLayoutGap="10px"
+     [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+<div class="persian-name" fxLayout="row" fxLayoutGap="10px">
+    <p>
+        <mat-form-field appearance="fill">
+          <mat-label>نام فارسی</mat-label>
+           <input matInput placeholder="First Name"
+          id="persianFirstName"
+          name="persianFirstName"
+          formControlName="persianFirstName">
+          <mat-error 
+          *ngIf="form.get('persianFirstName')?.hasError('required') &&
+           form.get('persianFirstName')?.touched">
+            First name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('persianFirstName')?.hasError('pattern')
+           && !form.get('persianFirstName')?.hasError('required') 
+           && form.get('persianFirstName')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+          @if(form.get('persianFirstName')?.hasError('pattern')
+          && !form.get('persianFirstName')?.hasError('required') 
+          && form.get('persianFirstName')?.touched){
+            <mat-icon matSuffix>pan_tool</mat-icon>
+          }
+          @else{
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          }
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>نام خانوادگی فارسی</mat-label>
+          <input matInput placeholder="Last Name"
+          id="persianLastName"
+          name="persianLastName"
+          formControlName="persianLastName">
+          <mat-error 
+          *ngIf="form.get('persianLastName')?.hasError('required') &&
+           form.get('persianLastName')?.touched">
+            Last name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('persianLastName')?.hasError('pattern')
+           && !form.get('persianLastName')?.hasError('required') 
+           && form.get('persianLastName')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+          @if(form.get('persianLastName')?.hasError('pattern')
+          && !form.get('persianLastName')?.hasError('required') 
+          && form.get('persianLastName')?.touched){
+            <mat-icon matSuffix>pan_tool</mat-icon>
+          }
+          @else{
+            <mat-icon matSuffix>person_pin</mat-icon>
+          }
+          
+        </mat-form-field>
+      </p>
+</div>
+<div class="englishName" fxLayout="row" fxLayoutGap="10px">
+
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>نام انگلیسی</mat-label>
+           <input matInput placeholder="First Name"
+           id="englishFirstName"
+          name="englishFirstName"
+          formControlName="englishFirstName">
+          <mat-error 
+          *ngIf="form.get('englishFirstName')?.hasError('required') &&
+           form.get('englishFirstName')?.touched">
+            Last name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('englishFirstName')?.hasError('pattern')
+           && !form.get('englishFirstName')?.hasError('required') 
+           && form.get('englishFirstName')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+          @if(form.get('englishFirstName')?.hasError('pattern')
+          && !form.get('englishFirstName')?.hasError('required') 
+          && form.get('englishFirstName')?.touched){
+            <mat-icon matSuffix>pan_tool</mat-icon>
+          }
+          @else{
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          }
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <mat-label>نام خانوادگی انگلیسی</mat-label>
+          <input matInput placeholder="Last Name"
+          id="englishLastName"
+          name="englishLastName"
+          formControlName="englishLastName">
+          <mat-error 
+          *ngIf="form.get('englishLastName')?.hasError('required') &&
+           form.get('englishLastName')?.touched">
+            Last name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('englishLastName')?.hasError('pattern')
+           && !form.get('englishLastName')?.hasError('required') 
+           && form.get('englishLastName')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+          @if(form.get('englishLastName')?.hasError('pattern')
+          && !form.get('englishLastName')?.hasError('required') 
+          && form.get('englishLastName')?.touched){
+            <mat-icon matSuffix>pan_tool</mat-icon>
+          }
+          @else{
+            <mat-icon matSuffix>person_pin</mat-icon>
+          }
+        </mat-form-field>
+      
+
+
+
+</div>
+<div class="password-container" 
+fxLayout="column" 
+fxLayoutGap="10px"
+formGroupName="passwords">
+    <mat-form-field>
+        <mat-label>گذرواژه</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'"
+        id="password"
+        type="password"
+        name="password"
+        formControlName="password" />
+       
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+          type="button"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+          password is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('password')?.hasError('pattern') && !form.get('password')?.hasError('required') && form.get('password')?.touched">
+          password must contain at least a number
+        </mat-error>
+        <mat-error *ngIf="form.get('passwords')?.hasError('equalValues') && !form.get('confirmPassword')?.hasError('required') && form.get('confirmPassword')?.touched">
+          password do not match
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>تایید گذرواژه</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" 
+        id="confirmPassword"
+        type="password"
+        name="confirmPassword"
+        formControlName="confirmPassword"/>
+        <mat-error *ngIf="form.get('confirmPassword')?.hasError('required') && form.get('confirmPassword')?.touched">
+          password is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('passwords')?.hasError('equalValues') && form.get('confirmPassword')?.touched">
+          password do not match
+        </mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+          type="button"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+
+</div>
+<div class="phone-email-container" fxLayout="column" fxLayoutGap="10px">
+    <mat-form-field appearance="fill">
+        <mat-label>شماره موبایل</mat-label>
+        <input matInput formControlName="phoneNumber"
+         placeholder="Enter your phone number" 
+         type="tel"
+         id="number"
+         name="number"
+         formControlName="number" >
+         <mat-error *ngIf="form.get('number')?.hasError('required') && form.get('number')?.touched">
+          Phone number is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('number')?.hasError('pattern') && !form.get('number')?.hasError('required') && form.get('number')?.touched">
+          Please enter a valid phone number.
+        </mat-error>
+      </mat-form-field>
+      
+      
+      
+      
+      
+    </div>
+    
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>ادرس ایمیل</mat-label>
+        <input matInput placeholder="example@yahoo.com"
+        id="email"
+       name="email"
+       formControlName="email">
+       @if(form.get('email')?.hasError('required')
+         && form.get('email')?.touched){
+         <mat-icon matSuffix>pan_tool</mat-icon>
+       }
+       @else{
+         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+       }
+        <mat-error *ngIf="form.get('email')?.hasError('required')
+         && form.get('email')?.touched">
+          Email is required.
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill">
+          <mat-label>شماره داخلی</mat-label>
+          <input matInput placeholder="internal Num"
+          id="internalNumber"
+         name="internalNumber"
+         formControlName="internalNumber">
+         @if(form.get('internalNumber')?.hasError('pattern') 
+         && !form.get('internalNumber')?.hasError('required') 
+         && form.get('internalNumber')?.touched){
+         <mat-icon matSuffix>pan_tool</mat-icon>
+       }
+       @else{
+         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+       }
+          <mat-error *ngIf="form.get('internalNumber')?.hasError('required')
+           && form.get('internalNumber')?.touched">
+           internal PhoneNumber is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('internalNumber')?.hasError('pattern') 
+          && !form.get('internalNumber')?.hasError('required') 
+          && form.get('internalNumber')?.touched">
+            Please enter a valid internal PhoneNumber.
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>رتبه</mat-label>
+          <input matInput placeholder="grade"
+          id="grade"
+         name="grade"
+         formControlName="grade">
+         @if(form.get('grade')?.hasError('pattern')
+         && !form.get('grade')?.hasError('required') 
+         && form.get('grade')?.touched){
+         <mat-icon matSuffix>pan_tool</mat-icon>
+       }
+       @else{
+         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+       }
+          <mat-error 
+          *ngIf="form.get('grade')?.hasError('required') &&
+           form.get('grade')?.touched">
+            grade is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('grade')?.hasError('pattern')
+           && !form.get('grade')?.hasError('required') 
+           && form.get('grade')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+        </mat-form-field>
+      </p>
+      
+      
+      
+      
+      
+      
+    
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>واحد</mat-label>
+        <input matInput placeholder="Unit"
+        id="unit"
+       name="unit"
+       formControlName="unit">
+       @if(form.get('unit')?.hasError('pattern')
+       && !form.get('unit')?.hasError('required') 
+       && form.get('unit')?.touched){
+       <mat-icon matSuffix>pan_tool</mat-icon>
+     }
+     @else{
+       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+     }
+        <mat-error 
+          *ngIf="form.get('unit')?.hasError('required') &&
+           form.get('unit')?.touched">
+            unit is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('unit')?.hasError('pattern')
+           && !form.get('unit')?.hasError('required') 
+           && form.get('unit')?.touched">
+            Only alphabetic characters are allowed.
+          </mat-error>
+      </mat-form-field>
+    </p>
+
+<div class="control-row">
+  <mat-form-field>
+    <div class="control">
+      <label for="role" class="font">نوع دسترسی</label>
+      <select  matNativeControl required formControlName="role" class="font">
+        <option value="user" class="font">یوزر</option>
+        <option value="admin" class="font">ادمین</option>
+      </select>
+    </div>
+  </mat-form-field>
+  </div>
+
+
+<div class="button-submit" fxLayout="column" fxLayoutGap="30px">
+    <button mat-stroked-button type="button" color="warn" (click)="onReset()">reset</button>
+    <button
+     mat-flat-button 
+     type="submit"
+      class="primary-button"
+       [disabled]="form.invalid"
+       [ngClass]="{ 
+                  'invalid-button': form.invalid, 
+                  'valid-button': form.valid }"
+                  color="primary"
+       >submit</button>
+</div>
+
+@if (form.touched && form.invalid) {
+    <p class="control-error">
+      Invalid form - please check your input data.
+    </p>
+  }
+</form>
+
+
+
+
+
+
+
+
+
+
+</section>

@@ -1,0 +1,434 @@
+.font{
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+
+.hotel-header{
+  text-align: end;
+}
+
+.hotel-card {
+  max-width: 1200px;   
+
+  margin: 20px auto;            
+  border-radius: 10px;          
+  overflow: hidden;            
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.container {
+  display: flex;   
+  font-family: 'Vazirmatn', sans-serif;
+  align-items: end
+
+}
+
+.image-container {
+  flex: 1;                       
+  min-width: 33%;     
+  max-width: 33%;           
+}
+
+.swiper-container {
+  width: 100%;                  
+  height: 100%;                 
+}
+
+.swiper-image {
+  width: 100%;                    
+  height: 200px;                  
+  object-fit: cover;               
+  border-radius: 10px;    
+  padding: 20px;        
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--sys-on-surface-variant);
+  z-index: 1000;
+  opacity: 0.5;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 1001;
+  border-radius: 8px;
+  width: 80%;
+  height: 70%;
+  max-width: 1000px;
+  max-height: 980px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0px;
+  background-color: var(--sys-surface-container-highest);
+
+
+}
+
+.modal-image-container{
+  width: 100%;
+   height: 95%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.button-for-modal {
+  margin-top: 10px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  
+}
+
+
+
+
+
+
+
+.hotel-details {
+  flex: 2;                     
+  padding: 20px;             
+  display: flex;
+  flex-direction: column;  
+  justify-content: center; 
+  justify-content: space-between;
+    text-align: right;   
+  font-family: 'Vazirmatn', sans-serif;
+
+  }
+
+.mat-card-title {
+  font-size: 1.5em;     
+  font-family: 'Vazirmatn', sans-serif;
+
+  font-weight: bold;       
+}
+
+.mat-card-subtitle {
+  font-size: 1.2em;    
+  font-family: 'Vazirmatn', sans-serif;
+
+}
+
+
+.paraph {
+  margin: 10px 0;             
+  font-size: 1em;              
+  line-height: 1.5;  
+  font-family: 'Vazirmatn', sans-serif;
+}
+.mat-mdc-card-header{
+  font-family: 'Vazirmatn', sans-serif;
+
+  display: flex;
+  
+    padding: 0px 16px 0;
+    
+    align-self: end;
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.hotel-trait-card {
+  font-family: 'Vazirmatn', sans-serif;
+  background-color:var(--mdc-elevated-card-container-color, var(--mat-app-surface-container-low));
+
+  max-width: 90%;             
+  margin: 20px auto;             
+  border-radius: 12px;          
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;   
+  
+}
+
+.hotel-trait-card:hover {
+  transform: translateY(-5px);  
+}
+
+.hotel-name {
+  font-size: 1.6em;              
+  font-weight: bold;  
+  padding: 16px 10px 0 !important;          
+}
+
+.hotel-price {
+  font-size: 1.2em;             
+}
+
+.hotel-traits {
+  display: flex;                
+  flex-direction: column;     
+  gap: 10px;  
+  align-items: end;
+  padding: 10px;
+}
+
+.trait {
+  display: flex;                 
+  align-items: center;           
+  font-size: 1em;             
+  gap: 8px;
+                 
+}
+
+.trait mat-icon {
+  margin-right: 8px;              
+  color: #ff9800;               
+  font-size: 20px;   
+}
+/* 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--sys-surface-dim);
+  height: 92px;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+
+.left-section button {
+  margin-right: 8px;
+}
+.left-section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-button mat-icon {
+  margin-right: 4px; 
+  font-size: 20px;
+}
+
+.button-label {
+  font-size: 0.9em;
+  
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+
+
+.right-section {
+  font-size: 1.2em; 
+  color: #ff9800;
+  display: flex;
+    flex-direction: column;
+}
+
+.right-section .average-rating {
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.right-section .total-ratings {
+  color: #666;
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+
+
+
+
+
+
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+  .loading-container {
+    margin: 50px auto;
+  }
+  
+  .unavailable-date {
+    pointer-events: none;
+  }
+  
+  .comment-card {
+    margin: 10px 0;
+    padding: 16px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .comment-card mat-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .star-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-rating mat-icon {
+    font-size: 20px; 
+    color: #FFD700; 
+  }
+  
+  .star-rating .filled {
+    color: #FFD700;
+  }
+  
+  .comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .comment-card {
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px; 
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .comment-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .comment-card mat-card-header {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0; 
+    
+  }
+  
+  .comment-card mat-card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+  font-family: 'Vazirmatn', sans-serif;
+  text-align: right;
+
+
+  }
+  
+  .comment-card mat-card-subtitle {
+    font-size: 0.9em;
+    color: #888; 
+  }
+  
+  .star-rating {
+    margin-top: 10px;
+  }
+  
+  .star-rating mat-icon {
+    font-size: 24px;
+    color: #c0c0c0;
+    transition: color 0.3s ease;
+  }
+  
+  .star-rating mat-icon.filled {
+    color: #fbc02d; 
+  }
+  .paraph{
+    padding: 16px;
+    text-align: right;
+  }
+ .comment-body{
+  padding: 16px;
+  font-family: 'Vazirmatn', sans-serif;
+text-align: right;
+ }
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 16px 0px 16px;
+}
+
+
+.image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-height: 420px;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.small-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.small-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  transition: transform 0.7s ease, opacity 0.3s ease;
+}
+
+.large-image {
+  height: 100%;
+cursor: pointer;
+}
+
+.large-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  transition: transform 0.7s ease, opacity 0.3s ease;
+
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr;
+  }
+}
+.image-container:hover img {
+  opacity: 0.5;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  z-index: 1;
+}
+
+
+
+
+

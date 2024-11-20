@@ -1,0 +1,51 @@
+<section class="container">
+  <h2>تمامی هتل های موجود</h2>
+  <div class="search-bar" fxLayout="row">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="جستجوی اسم هتل">
+    </mat-form-field>
+
+    <mat-form-field class="sort-dropdown">
+      <mat-select (selectionChange)="sortProducts($event.value)" placeholder="مرتب سازی">
+        <mat-option value="priceLowHigh">قیمت: از کم به زیاد</mat-option>
+        <mat-option value="priceHighLow">قیمت: از زیاد به کم</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="isLoading$ | async; else showData">
+    <app-loading-card></app-loading-card>
+  </div>
+<ng-template #showData>
+     <section  style="display: flex; flex-wrap: wrap;justify-content: center;align-items: center;">
+      <mat-card *ngFor="let product of filteredProducts" class="example-card" appearance="outlined" style="margin: 0px 0px 20px 20px;max-width: 25rem;">
+
+        <div style="width: 100%; height: 200px; margin: 0 auto;margin-bottom: 16px;">
+          <image-slider  [hotelData]="product"></image-slider>
+        </div>
+        <div (click)="viewDetails(product.id)" class="on-click">
+
+        
+        <mat-card-header>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+          <mat-card-subtitle>شروع قیمت از {{ product.price | toomanCurrency }}<span class="perNight">    هرشب</span></mat-card-subtitle>
+          <mat-card-subtitle><div class="right-section">
+            <span class="average-rating">{{ getAverageStars(product.comments!) | number: '1.1-1' }}</span>
+            <mat-icon>star</mat-icon>
+            <span class="total-ratings">(از {{product.comments?.length || 0}} نظر ثبت شده )</span>
+          </div></mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+        </mat-card-content>
+      </div>
+      </mat-card>
+      <mat-paginator [length]="filteredProducts.length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      (page)="onPageChange($event)">
+  </mat-paginator>
+     </section>
+    </ng-template>
+    </section>

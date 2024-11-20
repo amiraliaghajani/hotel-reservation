@@ -1,0 +1,40 @@
+<div class="modal-backdrop" (click)="onClose()"></div>
+
+<mat-card appearance="outlined" class="modal-content">
+  <mat-card-content>
+    <div class="calendar-container" *ngIf="reservations.length > 0">
+      <mat-calendar 
+        [dateClass]="dateClass"
+        (selectedChange)="dateSelected($event)"
+        (monthChange)="onMonthChange()">
+      </mat-calendar>
+      <div *ngIf="selectedReservations.length > 0">
+        <div class="profile-pictures"></div>
+      </div>
+    </div>
+    
+    <div class="reservation-details" *ngIf="selectedReservations.length > 0">
+      <div class="reservation-header">
+        <h3>
+          رزواسیون های موجود برای تاریخ
+          <span class="reservation-date">{{ convertToJalali(selectedDate) }}</span>
+        </h3>
+      </div>
+      <ul class="reservation-list">
+        <li class="reservation-item" *ngFor="let reservation of selectedReservations">
+          <div class="reservation-info">
+            <strong class="reservation-name">
+              {{ reservation.originalData?.user?.persianFirstName }} 
+              {{ reservation.originalData?.user?.persianLastName }}
+            </strong> 
+            <span class="reservation-date-range">
+              ({{ reservation.jalaliStart }} - {{ reservation.jalaliEnd }})
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+  <button mat-flat-button (click)="onClose()">Close</button>
+</mat-card>
+

@@ -1,0 +1,60 @@
+<mat-toolbar class="head">
+        
+      <!-- fxHide.gt-xs -->
+    <div >
+        <button mat-icon-button (click)="onToggleSidenav() ">
+          
+          <mat-icon>menu</mat-icon>
+
+        </button>
+   </div>
+   
+   <div>
+     
+     <a href="/">
+       <img src="../../../assets/images/logo.png" alt="">
+      </a>
+    </div>
+    
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+      <ul class="navigation-items" fxLayout fxLayoutGap="10px">
+<button 
+mat-icon-button
+ (click)="darkMode.set(!darkMode())"
+ matTooltip="night Mode"
+ >
+@if(!darkMode()){
+  <mat-icon [ngStyle]="{
+    color: !darkMode() ? 'black' : 'white ',
+    border: darkMode() ? '1px solid #333' : 'none'
+  }" >light-mode</mat-icon>
+}@else{
+  <mat-icon [ngStyle]="{
+    color: !darkMode() ? 'white !important' : 'black !important',
+  }">light-mode</mat-icon>
+}
+</button>
+
+        @if(isLoggedIn){
+  <li>
+    <a  routerLink="/signup" class="font link">ثبت کاربر جدید</a>
+  </li>
+
+  <li >
+    <a  routerLink="/login" (click)="onLogout()" class="font link">خروج</a>
+  </li>
+}
+@if(!isLoggedIn){
+  <li>
+    <a  routerLink="/login" class="font link">ورود</a>
+  </li>
+
+}
+
+       
+      </ul>
+
+
+   </div>
+
+  </mat-toolbar>

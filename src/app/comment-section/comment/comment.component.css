@@ -1,0 +1,65 @@
+.comment-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-radio-button {
+    margin-right: 15px;
+  }
+  mat-card-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .rating-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .star-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-slider {
+    width: 100%;
+    margin-right: 15px;
+  }
+  
+  mat-icon {
+    font-size: 24px;
+  }
+  
+  mat-icon[ng-reflect-color="accent"] {
+    color: #FFD700;
+  }
+  
+  button[mat-raised-button] {
+    margin-top: 10px;
+  }
+  
+  
+  .font{
+  font-family: 'Vazirmatn', sans-serif;
+text-align: right;
+  }

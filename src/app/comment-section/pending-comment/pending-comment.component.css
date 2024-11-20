@@ -1,0 +1,89 @@
+
+
+::ng-deep .mat-mdc-table[_ngcontent-ng-c1071037587] {
+  min-width: 98% !important;
+  border: 0;
+  margin: 0 auto;
+ 
+}
+  
+  .mat-card {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .mat-icon {
+    color: gold;
+  }
+  .button-container {
+    display: flex; 
+    gap: 10px; 
+  }
+  
+  .approve-button, .reject-button {
+    font-size: 0.875rem;       
+    padding: 4px 8px;            
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.05); 
+    }
+  }
+  
+  .reject-button {
+    
+    &:hover {
+      transform: scale(1.05);    
+    }
+  }
+  .serach-bar{
+
+    display: flex;
+    align-items: center; 
+    justify-content: left;
+
+  }
+  .serach-bar:last-child{
+    margin: 16px 0px 16px 0px ;
+  }
+  .serach-bar:first-child{
+    margin: 16px 0px 16px 16px ;
+  }
+
+
+
+
+
+
+  /* Add a border and background color to the header */
+.custom-table .mat-header-row {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Style the cells */
+.custom-table .mat-cell, .custom-table .mat-header-cell {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Add hover effect on rows */
+.custom-table .mat-row:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style the whole table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Add custom text alignment or color */
+.custom-table .mat-cell {
+  color: #555;
+  text-align: center;
+}
+

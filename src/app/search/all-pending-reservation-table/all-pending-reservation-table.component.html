@@ -1,0 +1,113 @@
+<mat-tab-group>
+    <mat-tab label="تاریخچه رزیواسیون هتل" class="font">
+        <div *ngFor="let hotel of hotels">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{hotel.name}}</mat-card-title>
+                <mat-card-subtitle>{{hotel.price| currency:'USD'}}</mat-card-subtitle>
+                <img mat-card-sm-image src="assets/images/{{hotel.image_url}}" >
+              </mat-card-title-group>
+            </mat-card-header>
+
+            <mat-list class="example-list-wrapping">
+                <mat-list-item>
+                    <span> {{ getReservationsForHotel(hotel.id).length }} : تعداد رزیواسیون ها</span>
+                </mat-list-item>
+            </mat-list>
+            <mat-card-content>
+                <mat-accordion>
+                    
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                            
+                            <mat-panel-title> تمام رزیواسیون ها</mat-panel-title>
+                            <mat-panel-description>
+                               press to {{panelOpenState() ? 'closed' : 'open'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        @for (reservation of getReservationsForHotel(hotel.id); track reservation.reservationId) {
+                            <mat-list></mat-list>
+                            <mat-list class="example-list-wrapping">
+                                <mat-list-item lines="3">
+                                  <span matListItemTitle> نام و نام خانوادگی کاربر : {{ reservation.user?.persianFirstName }} {{reservation.user?.persianLastName}} </span>
+                                  <p>اعضای خانواده:
+                                    <span *ngFor="let member of reservation.familyMembers">({{ member.firstName }}-{{ member.lastName }}) </span>
+                                  </p>
+                                </mat-list-item>
+                                <mat-list-item lines="3">
+                                  <span matListItemTitle>وضعیت: {{reservation.status}}</span>
+                                  {{ reservation.dateRange[0] | date }} - {{ reservation.dateRange[1] | date }}
+                                  <div class="button-container">
+                                    <button mat-button class="approve-button" (click)="approveReservation(reservation)" *ngIf="reservation.status === 'pending'" color="primary">Approve</button>
+                                    <button mat-button class="reject-button" (click)="rejectReservation(reservation)" *ngIf="reservation.status === 'pending'">Reject</button>
+                                       </div>
+                                </mat-list-item>
+                              </mat-list>
+                                <mat-divider></mat-divider>
+                }
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </mat-tab>
+
+
+    
+    <mat-tab label="تاریخچه رزروی های کاربران"  class="font">
+        <div *ngFor="let matching of matchingUsers" class="reservation-container">
+            <mat-card class="example-card reservation-card" appearance="outlined">
+              <mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title>{{matching.persianFirstName}} {{matching.persianLastName}}</mat-card-title>
+                  <mat-card-subtitle>شماره تلفن: {{matching.phoneNumber}}</mat-card-subtitle>
+                  <mat-card-subtitle>آدرس ایمیل: {{matching.emailAddress}}</mat-card-subtitle>
+                  <img mat-card-sm-image class="profile-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                </mat-card-title-group>
+              </mat-card-header>
+          
+              <mat-card-content>
+                <mat-accordion class="example-headers-align" multi>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>ریزواسیون</mat-panel-title>
+                      <mat-panel-description>
+                        دیدن رزیواسیون ها
+                        <!-- <mat-icon>account_circle</mat-icon> -->
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+          
+                    <div *ngIf="(getReservationsForUser(matching.id)?.length ?? 0) > 0; else noReservations">
+                        <!-- <h4>Basic native select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Filter by Status</mat-label>
+  <mat-select (selectionChange)="sortData($event.value)">
+      <mat-option value="">All</mat-option>
+    <mat-option value="pending">Pending</mat-option>
+    <mat-option value="approved">Approved</mat-option>
+    <mat-option value="rejected">Rejected</mat-option>
+  </mat-select>
+</mat-form-field> -->
+                      <ul class="reservation-list">
+                        <li *ngFor="let reservation of getReservationsForUser(matching.id)" class="reservation-item">
+                          <strong>آیدی رزیواسیون ها:</strong> {{reservation.reservationId}}<br>
+                          <strong>آیدی هتل:</strong> {{reservation.hotelId}}<br>
+                          <strong>وضعیت:</strong> {{reservation.status}}<br>
+                          <strong>تاریخ:</strong> {{reservation.dateRange[0] | date}} - {{reservation.dateRange[1] | date}}
+                        </li>
+                      </ul>
+                    </div>
+          
+                    <ng-template #noReservations>
+                      <p>No reservations for this user.</p>
+                    </ng-template>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          
+    </mat-tab>
+</mat-tab-group>
+

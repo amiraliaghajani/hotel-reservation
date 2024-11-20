@@ -1,0 +1,51 @@
+
+<section class="container" fxLayout="column"
+fxLayoutAlign="center center">
+
+<form action="" 
+ fxLayout="column"
+fxLayoutAlign="center center"
+fxLayoutGap="20px"
+[formGroup]="form"
+ (ngSubmit)="onSubmit()"
+>
+<p>
+    <mat-form-field appearance="fill">
+      <mat-label class="font label">آدرس ایمیل</mat-label>
+      <input matInput placeholder="example@yahoo.com"
+      id="email"
+     name="email"
+     formControlName="email">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  
+  <mat-form-field>
+    <mat-label class="font label">پسوورد را وارد کنید</mat-label>
+    <input matInput [type]="hide() ? 'password' : 'text'" type="password"
+    name="password"
+    formControlName="password"/>
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+      type="button"
+    >
+      <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <ng-template #showButton>
+    <button mat-flat-button type="submit" class="font">ورود</button>
+
+  </ng-template>
+  <div *ngIf="isLoading$ | async; else showButton">
+    
+    <span class="loader"></span>
+  </div>
+
+    </form>
+
+    
+</section>
