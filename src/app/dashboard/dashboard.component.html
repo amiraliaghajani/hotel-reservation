@@ -1,9 +1,9 @@
 <div class="header">
-    <h2>{{currentUser.englishFirstName}} {{currentUser.englishLastName}} Dashboard</h2>
-<button mat-raised-button [mat-menu-trigger-for]="widgetMenu">
-    <mat-icon>add-circle</mat-icon>
-    add widget
-</button>
+    <button mat-raised-button [mat-menu-trigger-for]="widgetMenu">
+        <mat-icon>add-circle</mat-icon>
+        اضافه کردن ویدجت
+    </button>
+    <h2> داشبورد {{currentUser.persianFirstName}} {{currentUser.persianLastName}} </h2>
 <mat-menu #widgetMenu="matMenu">
     @for(widget of store.widgetsToAdd(); track widget.id){
         <button mat-menu-item (click)="store.addWidget(widget)">
@@ -12,7 +12,7 @@
 
     } @empty{
         <button mat-menu-item >
-           no widgets to add
+          ویجت وجود ندارد
                 </button>
     }
 </mat-menu>

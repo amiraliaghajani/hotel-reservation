@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { UserType } from '../../../interface/user-type';
 
 @Component({
   selector: 'app-profile-info',
@@ -13,10 +14,10 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './profile-info.component.html',
   styleUrl: './profile-info.component.css'
 })
-export class ProfileInfoComponent {
-  users = [
-    { name: 'Alice Smith', email: 'alice@example.com', role: 'Admin', profilePicture: 'https://via.placeholder.com/150' },
-    { name: 'Bob Johnson', email: 'bob@example.com', role: 'User', profilePicture: 'https://via.placeholder.com/150' },
-    { name: 'Charlie Lee', email: 'charlie@example.com', role: 'Moderator', profilePicture: 'https://via.placeholder.com/150' },
-  ];
+export class ProfileInfoComponent implements OnInit {
+  currentUser: UserType|null =null
+  ngOnInit(){
+const user = localStorage.getItem('currentUser');
+this.currentUser = user ? JSON.parse(user) : null;
+  }
 }

@@ -8,7 +8,7 @@ text-align: right;
   }
   
   .reservation-card {
-    background: #ffffff; 
+    background: var(--sys-surface-container-low); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -28,13 +28,13 @@ text-align: right;
   
   .reservation-title {
     font-size: 1.5rem;
-    color: #343a40; 
+    color: var(--sys-on-surface); 
     margin-bottom: 0.5rem;
   }
   
   .reservation-card p {
     font-size: 1rem;
-    color: #495057;
+    color: var(--sys-on-surface);
     margin: 0;
   }
   
@@ -54,13 +54,13 @@ text-align: right;
   }
   
   .reservation-card p span {
-    color: #212529;
+    color: var(--sys-on-surface);
   }
   
   .no-reservations {
     text-align: center;
     margin-top: 2rem;
-    color: #6c757d;
+    color: var(--sys-on-surface);
     font-size: 1.2rem;
   }
   

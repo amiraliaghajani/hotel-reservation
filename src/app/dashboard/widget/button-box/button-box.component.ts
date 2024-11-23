@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import { UserDataService } from '../../../services/login/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button-box',
@@ -12,5 +14,13 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './button-box.component.css'
 })
 export class ButtonBoxComponent {
+  userDataService= inject(UserDataService)
+constructor(private router:Router){}
+
+  onLogout(){
+    this.userDataService.logoutUser()
+     localStorage.removeItem('authToken');
+     this.router.navigate(['/login'])
+   }
 
 }
