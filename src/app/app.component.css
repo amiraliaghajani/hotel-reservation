@@ -1,16 +1,16 @@
 body {
   overflow: hidden;
 }
-.sidenav{
+mat-sidenav-content, mat-sidenav-container, mat-sidenav{
     height: 100%;
 }
 mat-sidenav{
     width: 250px;
 }
+::ng-deep.swiper-button-next, .swiper-button-prev{
+    color: white!important;
+   }
 
-.mat-drawer-inner-container {
-  overflow: hidden;
-}
 
    mat-toolbar {
     padding: 0 20px;
