@@ -37,15 +37,17 @@
   mat-card-title {
     font-size: 1.25rem;
     font-weight: bold;
+    gap: .025rem;
    
   }
   
   mat-card-subtitle {
     font-size: 0.875rem;
-    
+    text-align: right;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    justify-content: end;
   }
   
   /* Style mat-icon inside the subtitle */

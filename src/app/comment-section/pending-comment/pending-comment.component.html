@@ -37,7 +37,7 @@ fxLayoutGap="10px"
   
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let comment"> {{ comment.comment.date | date:'short' }} </td>
+      <td mat-cell *matCellDef="let comment"> {{ comment.comment.date | jalali }} </td>
     </ng-container>
   
     <ng-container matColumnDef="status">
@@ -48,7 +48,7 @@ fxLayoutGap="10px"
     <ng-container matColumnDef="stars">
       <th mat-header-cell *matHeaderCellDef> Rating </th>
       <td mat-cell *matCellDef="let comment">
-        <mat-icon *ngFor="let star of [].constructor(comment.comment.stars)">star</mat-icon>
+        <mat-icon *ngFor="let star of [].constructor(comment.comment.stars)" class="star-icon">star</mat-icon>
       </td>
     </ng-container>
   

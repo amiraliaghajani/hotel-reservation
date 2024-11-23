@@ -6,13 +6,15 @@ import { Reservation } from '../../../interface/reservation';
 import { forkJoin, map } from 'rxjs';
 import { HotelService } from '../../../all-available-hotel/hotel.service';
 import { CommonModule } from '@angular/common';
+import { JalaliMomentPipe } from "../../../pipe/jalali-moment.pipe";
 
 @Component({
   selector: 'app-history',
   standalone: true,
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    JalaliMomentPipe
+],
   templateUrl: './history.component.html',
   styleUrl: './history.component.css'
 })

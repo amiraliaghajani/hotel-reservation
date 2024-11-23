@@ -5,15 +5,16 @@ import { CommentInterface } from '../../../interface/comment';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { JalaliMomentPipe } from "../../../pipe/jalali-moment.pipe";
 @Component({
   selector: 'app-my-comment',
   standalone: true,
   imports: [
     CommonModule,
     MatCardModule,
-    MatIconModule
-
-  ],
+    MatIconModule,
+    JalaliMomentPipe
+],
   templateUrl: './my-comment.component.html',
   styleUrl: './my-comment.component.css'
 })

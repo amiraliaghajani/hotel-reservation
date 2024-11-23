@@ -5,14 +5,17 @@
         <mat-card-header>
           <mat-card-title>{{ comment.title }}</mat-card-title>
           <mat-card-subtitle>
-            hotel id:{{ comment.hotelId }} - rating: {{ comment.stars }} <mat-icon>star</mat-icon>
+            {{ comment.hotelId }} : آیدی هتل
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+              {{ comment.stars }}  : امتیاز شما
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           {{ comment.description }}
         </mat-card-content>
         <mat-card-footer>
-          {{ comment.date | date:'mediumDate' }}
+          {{ comment.date | jalali }}
         </mat-card-footer>
       </mat-card>
       

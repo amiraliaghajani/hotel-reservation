@@ -21,7 +21,6 @@ import moment from 'moment-jalaali';
 
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { JalaliDateAdapter } from '../services/jalali-date-adapter';
-import { JALALI_DATE_FORMATS } from '../test/test.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -81,7 +80,6 @@ interface User {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: DateAdapter, useClass: JalaliDateAdapter },
-    { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
     { provide: MAT_DATE_LOCALE, useValue: 'fa-IR' }, 
     provideNativeDateAdapter()
   ],

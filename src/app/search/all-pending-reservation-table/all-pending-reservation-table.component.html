@@ -37,7 +37,7 @@
                                 </mat-list-item>
                                 <mat-list-item lines="3">
                                   <span matListItemTitle>وضعیت: {{reservation.status}}</span>
-                                  {{ reservation.dateRange[0] | date }} - {{ reservation.dateRange[1] | date }}
+                                  {{ reservation.dateRange[0] | jalali }} - {{ reservation.dateRange[1] | jalali }}
                                   <div class="button-container">
                                     <button mat-button class="approve-button" (click)="approveReservation(reservation)" *ngIf="reservation.status === 'pending'" color="primary">Approve</button>
                                     <button mat-button class="reject-button" (click)="rejectReservation(reservation)" *ngIf="reservation.status === 'pending'">Reject</button>
@@ -94,7 +94,7 @@
                           <strong>آیدی رزیواسیون ها:</strong> {{reservation.reservationId}}<br>
                           <strong>آیدی هتل:</strong> {{reservation.hotelId}}<br>
                           <strong>وضعیت:</strong> {{reservation.status}}<br>
-                          <strong>تاریخ:</strong> {{reservation.dateRange[0] | date}} - {{reservation.dateRange[1] | date}}
+                          <strong>تاریخ:</strong> {{reservation.dateRange[0] | jalali}} - {{reservation.dateRange[1] | jalali}}
                         </li>
                       </ul>
                     </div>

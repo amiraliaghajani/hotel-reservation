@@ -24,6 +24,7 @@ import { CommentInterface } from '../../interface/comment';
 import { CommentService } from '../../services/comment.service';
 import { forkJoin, map } from 'rxjs';
 import { GetAllDataService } from '../../services/get-all-data.service';
+import { JalaliMomentPipe } from '../../pipe/jalali-moment.pipe';
 @Component({
   selector: 'app-pending-comment',
   standalone: true,
@@ -37,9 +38,9 @@ import { GetAllDataService } from '../../services/get-all-data.service';
     MatSortModule,
     MatInputModule,
     MatCardModule,
-    MatButtonModule
-
-  ],
+    MatButtonModule,
+   JalaliMomentPipe
+],
   templateUrl: './pending-comment.component.html',
   styleUrl: './pending-comment.component.css',
   encapsulation: ViewEncapsulation.None

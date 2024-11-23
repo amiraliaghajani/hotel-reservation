@@ -42,6 +42,7 @@ export class CommentService {
   //   return this.http.put<CommentInterface>(`${this.apiUrl}/comments/${comment.commentId}`, comment);
   // }
   updateComment(comment: CommentInterface): Observable<CommentInterface> {
+    console.log(comment )
     return this.http.get<{ DUMMY_Users: CommentInterface[] }>(this.apiUrl).pipe(
       map(response => {
         const index = response.DUMMY_Users.findIndex(c => c.commentId === comment.commentId);

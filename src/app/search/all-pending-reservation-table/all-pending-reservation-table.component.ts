@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
 import { Observable } from 'rxjs';
+import { JalaliMomentPipe } from "../../pipe/jalali-moment.pipe";
 
 
 
@@ -37,8 +38,9 @@ import { Observable } from 'rxjs';
     MatFormFieldModule,
     MatInputModule,
     MatAccordion,
-    MatSelectModule
-  ],
+    MatSelectModule,
+    JalaliMomentPipe
+],
   templateUrl: './all-pending-reservation-table.component.html',
   styleUrl: './all-pending-reservation-table.component.css'
 })
