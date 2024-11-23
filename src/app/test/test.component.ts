@@ -17,21 +17,8 @@ import {MatCardModule} from '@angular/material/card';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import { GetAllDataService } from '../services/get-all-data.service';
 import { CalendarForm } from '../interface/calendar-form';
-import { JalaliMomentPipe } from '../pipe/jalali-moment.pipe';
 import { JalaliDateAdapter } from '../services/jalali-date-adapter';
 import moment from 'jalali-moment';
-import { ImageSliderComponent } from '../image-slider/image-slider.component';
-export const JALALI_DATE_FORMATS = {
-  parse: {
-    dateInput: 'YYYY/MM/DD',
-  },
-  display: {
-    dateInput: 'YYYY/MM/DD',
-    monthYearLabel: 'MMMM YYYY',
-    dateA11yLabel: 'YYYY/MM/DD',
-    monthYearA11yLabel: 'MMMM YYYY',
-  }
-};
 
 
 
@@ -52,13 +39,12 @@ export interface Item {
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
-    JalaliMomentPipe,
-    ImageSliderComponent,
+   
 
   ],
   providers: [
     { provide: DateAdapter, useClass: JalaliDateAdapter },
-    { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
+    
     { provide: MAT_DATE_LOCALE, useValue: 'fa-IR' }, 
     provideNativeDateAdapter()
   ],

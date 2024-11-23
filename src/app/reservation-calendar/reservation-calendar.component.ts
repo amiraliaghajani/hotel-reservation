@@ -1,27 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import {
-  AfterViewInit,
-  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  ContentChild,
   ElementRef,
-  Input,
   Renderer2,
   ViewChild,
   ViewEncapsulation,
-  effect,
 } from '@angular/core';
 
-import { CommonModule, JsonPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import moment from 'moment-jalaali';
 
 
 
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { JalaliDateAdapter } from '../services/jalali-date-adapter';
-import { JALALI_DATE_FORMATS } from '../test/test.component';
+// import { JALALI_DATE_FORMATS } from '../test/test.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -48,7 +43,6 @@ import { Reservation } from '../interface/reservation';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
-    JsonPipe,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
@@ -61,7 +55,7 @@ import { Reservation } from '../interface/reservation';
   templateUrl: './reservation-calendar.component.html',
   providers: [
     { provide: DateAdapter, useClass: JalaliDateAdapter },
-    { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
+    // { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
     { provide: MAT_DATE_LOCALE, useValue: 'fa-IR' }, 
     provideNativeDateAdapter()
   ],
@@ -109,16 +103,13 @@ export class ReservationCalendarComponent {
 
 
   ngOnInit(): void {
-    this.fetchData();
         this.fetchDataForReservation();
-        this.getVisibleDates()
         
           this.addProfilePictures();
         
         
       }
       ngAfterViewInit(): void {
-        this.getVisibleDates(); 
         this.cdr.detectChanges();
         console.log("View checked, adding profile pictures...");
         this.addProfilePictures();
@@ -160,26 +151,7 @@ export class ReservationCalendarComponent {
     );
   }
 
-  fetchData() {
-    this.http.get<any[]>(this.apiUrl).subscribe(
-      (data) => {
-        this.dateRanges = data.map(item => [
-          new Date(item.dateRange[0]),
-          new Date(item.dateRange[1])
-        ]);
-        console.log('Extracted Date Ranges:', this.dateRanges);
-
-        this.jalaliDateRanges = this.dateRanges.map(range => [
-          moment(range[0]).locale('fa').format('YYYY/MM/DD'),
-          moment(range[1]).locale('fa').format('YYYY/MM/DD')
-        ]);
-        console.log('Jalali Date Ranges:', this.jalaliDateRanges);
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-      }
-    );
-  }
+ 
 
 
   convertToJalali(date: Date | null | undefined): string {
@@ -188,24 +160,6 @@ export class ReservationCalendarComponent {
    
     return moment(date).locale('fa').format('jYYYY/jMM/jDD');
   }
-  
-  getVisibleDates(): void {
-    const currentMonth = moment().jMonth();
-    const currentYear = moment().jYear();
-    const daysInMonth = moment.jDaysInMonth(currentYear, currentMonth);
-  
-    console.log("Generating visible dates...");
-    this.visibleDates = Array.from({ length: daysInMonth }, (_, i) => 
-      moment(`${currentYear}/${currentMonth + 1}/${i + 1}`, 'jYYYY/jMM/jDD')
-        .format('jYYYY/jMM/jDD')
-    );
-  
-    console.log("Visible Dates:", this.visibleDates); 
-  }
-
-
-
-
 
   parseAriaLabelToJalali(ariaLabel: string): string {
     const parts = ariaLabel.split(' ');
@@ -236,33 +190,7 @@ export class ReservationCalendarComponent {
 
 
 
-  compareDatesWithReservations(): void {
-    // console.log("Comparing visible dates with reservations...");
-    
-    this.visibleDates.forEach(date => {
-      const visibleMoment = moment(date, 'jYYYY/jMM/jDD');
-  
-      if (this.reservations && this.reservations.length > 0) {
-        this.reservations.forEach(reservation => {
-          const startMoment = moment(reservation.jalaliStart, 'jYYYY/jMM/jDD');
-          const endMoment = moment(reservation.jalaliEnd, 'jYYYY/jMM/jDD');
-  
-          const isInRange = visibleMoment.isBetween(startMoment, endMoment, undefined, '[]');
-  
-          // console.log(`Checking date ${date}:`);
-          // console.log(`- Start: ${reservation.jalaliStart} (${startMoment.format('jYYYY/jMM/jDD')})`);
-          // console.log(`- End: ${reservation.jalaliEnd} (${endMoment.format('jYYYY/jMM/jDD')})`);
-          // console.log(`- In Range: ${isInRange}`);
-  
-          if (isInRange) {
-            console.log(`Date ${date} is within the reservation range!`);
-          }
-        });
-      } else {
-        console.log("No reservations to compare.");
-      }
-    });
-  }
+ 
   addProfilePictures(): void {
     const calendarCells: NodeListOf<Element> = this.el.nativeElement.querySelectorAll('.reserved-date');
 
@@ -390,7 +318,7 @@ export class ReservationCalendarComponent {
     const cell = this.el.nativeElement.querySelector('mat-calendar .mat-calendar-body-cell-selected');
     const ariaLabel = cell ? cell.getAttribute('aria-label') : '';
   
-    this.compareDatesWithReservations();
+    
     this.selectedReservations = this.reservations.filter(reservation => {
       const start = new Date(reservation.startDay);
       const end = new Date(reservation.endDay);
@@ -403,12 +331,6 @@ export class ReservationCalendarComponent {
   
 
   
-isDateInRange(date: string, start: string, end: string): boolean {
-  const dateMoment = moment(date, 'jYYYY/jMM/jDD');
-  const startMoment = moment(start, 'jYYYY/jMM/jDD');
-  const endMoment = moment(end, 'jYYYY/jMM/jDD');
-  return dateMoment.isBetween(startMoment, endMoment, undefined, '[]');
-}
 
 
 

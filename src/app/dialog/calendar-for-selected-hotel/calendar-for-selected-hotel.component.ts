@@ -1,22 +1,16 @@
-import { Component, EventEmitter, inject, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
 import {
-  AfterViewInit,
-  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  ContentChild,
   ElementRef,
-  Input,
   Renderer2,
   ViewEncapsulation,
-  effect,
 } from '@angular/core';
 
-import { CommonModule, JsonPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import moment from 'moment-jalaali';
 
 
@@ -32,20 +26,19 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { Reservation } from '../../interface/reservation';
 import { JalaliDateAdapter } from '../../services/jalali-date-adapter';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DialogConfrimComponent } from '../dialog-confrim/dialog-confrim.component';
 
 
-export const JALALI_DATE_FORMATS = {
-  parse: {
-    dateInput: 'YYYY/MM/DD',
-  },
-  display: {
-    dateInput: 'YYYY/MM/DD',
-    monthYearLabel: 'MMMM YYYY',
-    dateA11yLabel: 'YYYY/MM/DD',
-    monthYearA11yLabel: 'MMMM YYYY',
-  }
-};
+// export const JALALI_DATE_FORMATS = {
+//   parse: {
+//     dateInput: 'YYYY/MM/DD',
+//   },
+//   display: {
+//     dateInput: 'YYYY/MM/DD',
+//     monthYearLabel: 'MMMM YYYY',
+//     dateA11yLabel: 'YYYY/MM/DD',
+//     monthYearA11yLabel: 'MMMM YYYY',
+//   }
+// };
 
 
 @Component({
@@ -56,7 +49,6 @@ export const JALALI_DATE_FORMATS = {
     MatButtonModule,
     MatCardModule,
     MatTooltipModule,
-    JsonPipe,
     CommonModule,
     MatExpansionModule,
     MatIconModule,
@@ -69,7 +61,7 @@ export const JALALI_DATE_FORMATS = {
   ],
   providers: [
     { provide: DateAdapter, useClass: JalaliDateAdapter },
-    { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
+    // { provide: MAT_DATE_FORMATS, useValue: JALALI_DATE_FORMATS },
     { provide: MAT_DATE_LOCALE, useValue: 'fa-IR' }, 
     provideNativeDateAdapter()
   ],
