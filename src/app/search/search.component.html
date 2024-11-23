@@ -1,8 +1,8 @@
 <section class="table-container">
-  
-  <div *ngIf="isLoading$ | async; else showData">
-    <app-loading-search-tabke></app-loading-search-tabke>
+  <div *ngIf="isLoading$ | async; else showData" class="test-div">
+    <app-loading-search-tabke class=""></app-loading-search-tabke>
   </div>
+  
 <ng-template #showData>
   <mat-card *ngIf="selectedUser" class="user-card">
     <mat-card-header>
@@ -69,8 +69,8 @@
     </mat-card-actions>
   </mat-card>
   
-
-
+  
+  
      <div 
      class="serach-bar"
       fxLayout="row" 
@@ -91,11 +91,12 @@
             </mat-select>
           </mat-form-field>
 
+          
 
     </div>
-
-
+    
 <div class="table-container">
+  
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
     <ng-container matColumnDef="number" >

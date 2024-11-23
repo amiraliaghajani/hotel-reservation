@@ -6,10 +6,15 @@
   font-family: 'Vazirmatn', sans-serif;
 
 }
+
 .search-bar{
   margin: 16px;
 }
-
+.test-div{
+  width: 100vw;
+  height: 100vh;
+  
+}
 table {
   width: 100%;
 }
@@ -90,5 +95,8 @@ table {
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-
+  .loading-div{
+    width: 100vw;
+    height: 100vh;
+  }
 

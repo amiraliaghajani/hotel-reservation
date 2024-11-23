@@ -6,6 +6,7 @@
 .sidenav-header{
     padding: 24px;
     text-align: center;
+    overflow: hidden;
 }
 .sidenav-header img{
     border-radius: 100%;

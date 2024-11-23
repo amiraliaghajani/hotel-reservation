@@ -1,16 +1,16 @@
 body {
   overflow: hidden;
 }
-mat-sidenav-content, mat-sidenav-container, mat-sidenav{
+.sidenav{
     height: 100%;
 }
 mat-sidenav{
     width: 250px;
 }
-::ng-deep.swiper-button-next, .swiper-button-prev{
-    color: white!important;
-   }
 
+.mat-drawer-inner-container {
+  overflow: hidden;
+}
 
    mat-toolbar {
     padding: 0 20px;
@@ -69,3 +69,12 @@ mat-sidenav{
 
   }
 
+
+  mat-progress-bar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
