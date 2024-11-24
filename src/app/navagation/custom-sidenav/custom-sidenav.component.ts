@@ -64,6 +64,10 @@ route: 'pendingreservation',},
 {icon: 'analytics',
 label: 'داشبورد',
 route: 'dashboard',},
+
+{icon: 'comment',
+label: 'داشبورد',
+route: 'hotellist',},
 ]);
 
 showDelay = new FormControl(500);
@@ -79,7 +83,6 @@ ngOnInit(){
     this.currentUser = user
     console.log('updated current user to:', user)
   })
-
 }  
 
 }

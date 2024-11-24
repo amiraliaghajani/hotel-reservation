@@ -5,7 +5,7 @@
             <mat-card-header>
               <mat-card-title-group>
                 <mat-card-title>{{hotel.name}}</mat-card-title>
-                <mat-card-subtitle>{{hotel.price| currency:'USD'}}</mat-card-subtitle>
+                <mat-card-subtitle>{{hotel.price| toomanCurrency}}</mat-card-subtitle>
                 <img mat-card-sm-image src="assets/images/{{hotel.image_url}}" >
               </mat-card-title-group>
             </mat-card-header>

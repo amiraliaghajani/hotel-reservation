@@ -41,11 +41,11 @@
         </mat-card-content>
       </div>
       </mat-card>
-      <mat-paginator [length]="filteredProducts.length"
-      [pageSize]="pageSize"
-      [pageIndex]="pageIndex"
-      (page)="onPageChange($event)">
-  </mat-paginator>
-     </section>
+    </section>
+    <mat-paginator [length]="filteredProducts.length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    (page)="onPageChange($event)">
+</mat-paginator>
     </ng-template>
     </section>

@@ -2,20 +2,18 @@ import { Component } from '@angular/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
 @Component({
-  selector: 'app-dialog-confrim',
+  selector: 'app-delete-confrim-modal',
   standalone: true,
   imports: [
     MatDialogModule,
     MatButtonModule,
-
   ],
-  templateUrl: './dialog-confrim.component.html',
-  styleUrl: './dialog-confrim.component.css'
+  templateUrl: './delete-confrim-modal.component.html',
+  styleUrl: './delete-confrim-modal.component.css'
 })
-export class DialogConfrimComponent {
-  constructor(public dialogRef: MatDialogRef<DialogConfrimComponent>) {}
+export class DeleteConfrimModalComponent {
+  constructor(public dialogRef: MatDialogRef<DeleteConfrimModalComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -24,6 +22,5 @@ export class DialogConfrimComponent {
   onConfirm(): void {
     this.dialogRef.close(true);
   }
-
 
 }

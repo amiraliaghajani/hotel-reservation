@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif ;
+
+  }
+  
+  body {
+    /* background: #e8f0fe; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .edit-hotel-container {
+    background:var(--mat-app-surface-container-low);
+    /* color: white; */
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  .edit-hotel-container:hover {
+    transform: scale(1.05);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    /* color: #fff; */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--mat-sidenav-content-text-color);
+    text-align: right;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid ;
+    border-radius: 8px;
+    margin-top: 5px;
+    background: transparent;
+    color: var(--mat-sidenav-content-text-color);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: right;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  textarea:focus {
+    border-color: #fc5c7d;
+    box-shadow: 0 0 8px rgba(252, 92, 125, 0.6);
+  }
+  
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-left: 10px;
+  }
+  
+  .btn-save {
+    background-color: #fc5c7d;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .btn-save:hover {
+    background-color: #6a82fb;
+    transform: translateY(-4px);
+  }
+  
+  .btn-save:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .edit-hotel-container {
+      padding: 25px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .form-group label,
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      font-size: 1rem;
+      
+    }
+  
+    .btn-save {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  }
+  .center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  

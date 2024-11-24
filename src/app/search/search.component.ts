@@ -195,8 +195,11 @@ isLoading$ : Observable<boolean>;
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
        this.getAllDataService.deleteUser(user.id).subscribe(
-        () => console.log("User deleted :", user),
-        (error) => console.error("error deleting user : " , error)
+        () => {console.log("User deleted :", user);
+          window.location.reload();
+        },
+        (error) => console.error("error deleting user : " , error),
+        
        )
       }
     });

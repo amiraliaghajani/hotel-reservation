@@ -1,0 +1,31 @@
+<div class="button-container">
+      <button mat-fab extended class="btn" (click)="addHotel()">
+          <mat-icon>add</mat-icon>
+          اضافه کردن هتل
+        </button>
+  </div>
+<div class="hotel-list">
+
+    <div *ngFor="let hotel of hotels" class="hotel-card">
+      <img [src]="'../../assets/images/' + hotel.image_url[0]" loading="lazy" alt="{{ hotel.name }}" class="hotel-image" />
+      <div class="hotel-details">
+        <h2>{{ hotel.name }}</h2>
+        <p class="hotel-description">{{ hotel.description }}</p>
+        <p class="hotel-price">( {{ hotel.price |toomanCurrency }} ) <strong>: قیمت </strong></p>
+        <div class="button-group">
+          <button class="btn btn-view"
+           (click)="deleteHotel(hotel)"
+           >پاک کردن</button>
+          <button
+            class="btn btn-book"
+            
+            
+            (click)="viewDetails(hotel.id)"
+          >
+            ویرایش اطلاعات
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

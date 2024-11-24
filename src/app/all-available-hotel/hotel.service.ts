@@ -50,4 +50,20 @@ loadingSignalService = inject(LoadingSignalService)
       })
     );
   }
+  updateHotel(id: number, hotel: HotelProduct): Observable<HotelProduct> {
+    return this.http.put<HotelProduct>(`${this.apiUrl}/${id}`, hotel);
+  }
+  getAllHotels(): Observable<HotelProduct[]> {
+    return this.http.get<HotelProduct[]>(this.apiUrl);
+  }
+  createHotel(hotel: HotelProduct): Observable<HotelProduct> {
+    return this.http.post<HotelProduct>(this.apiUrl, hotel);
+  } 
+  getHotelById(id: number): Observable<HotelProduct> {
+    return this.http.get<HotelProduct>(`${this.apiUrl}/${id}`);
+  }
+deleteHotel(hotelId:number){
+  return this.http.delete<void>(this.apiUrl + `/${hotelId}`);
+}
+
 }

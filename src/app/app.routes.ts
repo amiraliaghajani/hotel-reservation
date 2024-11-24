@@ -23,6 +23,9 @@ export const routes: Routes = [
 { path: 'test5',loadComponent: ()=> import("./test5/test5.component").then(m => m.Test5Component)},
 { path: 'calendar',loadComponent: ()=> import("./reservation-calendar/reservation-calendar.component").then(m => m.ReservationCalendarComponent)},
 {path:'dashboard',loadComponent: ()=> import("./dashboard/dashboard.component").then(m => m.DashboardComponent)},
+{path:'hotellist',loadComponent: ()=> import("./hotel-list-administration/hotel-list-administration.component").then(m => m.HotelListAdministrationComponent)},
+{path:'hotellist/:id',loadComponent: ()=> import("./hotel-list-administration/edit-form-hotel/edit-form-hotel.component").then(m => m.EditFormHotelComponent)},
+{path:'hotellist/newhotel',loadComponent: ()=> import("./hotel-list-administration/new-hotel-form/new-hotel-form.component").then(m => m.NewHotelFormComponent)},
 { path: '**', redirectTo: '' }
 
 
